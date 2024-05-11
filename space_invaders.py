@@ -7,14 +7,13 @@ from pygame import mixer
 pygame.init()
 
 # creating screen
-screen_width = 800
-screen_height = 600
+screen_width = 1200
+screen_height = 1000
 screen = pygame.display.set_mode((screen_width,
                                   screen_height))
 
 # caption and icon
-pygame.display.set_caption("Welcome to Space\
-Invaders Game by:- styles")
+pygame.display.set_caption("This is totaly not a bioweapon!")
 
 # Score
 score_val = 0
@@ -44,8 +43,8 @@ mixer.music.play(-1)
 
 # player
 playerImage = pygame.image.load('data/spaceship.png')
-player_X = 370
-player_Y = 523
+player_X = 600
+player_Y = 935
 player_Xchange = 0
 
 # Invader
@@ -54,7 +53,7 @@ invader_X = []
 invader_Y = []
 invader_Xchange = []
 invader_Ychange = []
-no_of_invaders = 8
+no_of_invaders = 12
 
 for num in range(no_of_invaders):
     invaderImage.append(pygame.image.load('data/alien.png'))
@@ -164,6 +163,7 @@ while running:
             invader_X[i] = random.randint(64, 736)
             invader_Y[i] = random.randint(30, 200)
             invader_Xchange[i] *= -1
+            no_of_invaders = no_of_invaders - 1
 
         invader(invader_X[i], invader_Y[i], i)
 
